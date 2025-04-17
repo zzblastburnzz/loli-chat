@@ -1,24 +1,22 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import StoryFeedScreen from '../screens/StoryFeedScreen';
 
 import WelcomeScreen from '../screens/WelcomeScreen';
 import FriendSuggestionScreen from '../screens/FriendSuggestionScreen';
 import ChatScreen from '../screens/ChatScreen';
 import StatusScreen from '../screens/StatusScreen';
-import StoryFeedScreen from '../screens/StoryFeedScreen';
+import StoryFeedScreen from '../screens/StoryFeedScreen'; // chỉ 1 dòng này!
 
 export type RootStackParamList = {
   Welcome: undefined;
   FriendSuggestion: undefined;
   Chat: { friendId: string };
   Status: undefined;
+  StoryFeed: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
-const Stack = createNativeStackNavigator();
 
 export default function AppNavigator() {
   return (
@@ -28,7 +26,7 @@ export default function AppNavigator() {
         <Stack.Screen name="FriendSuggestion" component={FriendSuggestionScreen} />
         <Stack.Screen name="Chat" component={ChatScreen} />
         <Stack.Screen name="Status" component={StatusScreen} />
-	<Stack.Screen name="StoryFeed" component={StoryFeedScreen} />
+        <Stack.Screen name="StoryFeed" component={StoryFeedScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
