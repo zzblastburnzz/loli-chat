@@ -1,25 +1,27 @@
-export async function getTodayStories() {
-  return [
+// src/services/FriendStoryService.ts
+
+import { getAutoStory } from './AutoStoryService';
+
+export const getTodayStories = () => {
+  const autoStory = getAutoStory();
+
+  const friendStories = [
     {
-      id: 's1',
-      friendName: 'Lina',
-      avatar: 'https://i.imgur.com/Uefiygn.png',
-      image: 'https://i.imgur.com/sJ8ZLlx.jpg',
-      caption: 'Hôm nay trời đẹp ghê luôn á ☀️',
+      id: 'friend1',
+      friendName: 'Minh Anh',
+      avatar: 'https://i.imgur.com/avatar1.png',
+      image: 'https://i.imgur.com/image1.jpg',
+      caption: 'Cùng nhau học bài nào!',
     },
     {
-      id: 's2',
-      friendName: 'Ken',
-      avatar: 'https://i.imgur.com/KF8kVqJ.png',
-      image: 'https://i.imgur.com/OtG6eF5.jpg',
-      caption: 'Đi dạo 1 chút cho tâm trí thư giãn 🍃',
+      id: 'friend2',
+      friendName: 'Hoàng',
+      avatar: 'https://i.imgur.com/avatar2.png',
+      image: 'https://i.imgur.com/image2.jpg',
+      caption: 'Trà sữa là chân ái!',
     },
-    {
-      id: 's3',
-      friendName: 'Mii',
-      avatar: 'https://i.imgur.com/AnYcFxg.png',
-      image: 'https://i.imgur.com/RM0XkVp.jpg',
-      caption: 'Làm biếng học quáaaa 😴 ai rủ đi trà sữa hônggg!',
-    },
+    // Thêm các story khác nếu cần
   ];
-}
+
+  return [autoStory, ...friendStories];
+};
