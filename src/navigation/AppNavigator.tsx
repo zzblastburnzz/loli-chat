@@ -6,28 +6,10 @@ import WelcomeScreen from '../screens/WelcomeScreen';
 import FriendSuggestionScreen from '../screens/FriendSuggestionScreen';
 import ChatScreen from '../screens/ChatScreen';
 import StatusScreen from '../screens/StatusScreen';
-import StoryFeedScreen from '../screens/StoryFeedScreen'; // chỉ 1 dòng này!
+import StoryFeedScreen from '../screens/StoryFeedScreen'; // Chỉ import MỘT LẦN
 
 export type RootStackParamList = {
   Welcome: undefined;
   FriendSuggestion: undefined;
   Chat: { friendId: string };
-  Status: undefined;
-  StoryFeed: undefined;
-};
-
-const Stack = createStackNavigator<RootStackParamList>();
-
-export default function AppNavigator() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Welcome" screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Welcome" component={WelcomeScreen} />
-        <Stack.Screen name="FriendSuggestion" component={FriendSuggestionScreen} />
-        <Stack.Screen name="Chat" component={ChatScreen} />
-        <Stack.Screen name="Status" component={StatusScreen} />
-        <Stack.Screen name="StoryFeed" component={StoryFeedScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
+  Status

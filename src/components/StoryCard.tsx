@@ -5,7 +5,7 @@ import { getCommentForStory } from '../services/StoryAICommentService';
 export default function StoryCard({ story }: { story: any }) {
   const handleComment = async () => {
     const aiReply = await getCommentForStory(story.friendName, story.caption);
-    Alert.alert('AI Phản hồi', aiReply);
+    Alert.alert('Phản hồi từ ' + story.friendName, aiReply);
   };
 
   return (
