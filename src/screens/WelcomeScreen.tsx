@@ -3,6 +3,8 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-nativ
 import { useNavigation } from '@react-navigation/native';
 import type { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../navigation/AppNavigator';
+import React from 'react';
+import { View, Button, StyleSheet } from 'react-native';
 
 type WelcomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Welcome'>;
 
@@ -32,6 +34,10 @@ export default function WelcomeScreen() {
 	<TouchableOpacity onPress={() => navigation.navigate('Status')} style={[styles.button, { backgroundColor: '#10B981', marginTop: 10 }]}>
  	 <Text style={styles.buttonText}>🧠 Test StatusScreen</Text>
 	</TouchableOpacity>
+		<Button
+	        title="Xem Story của bạn ảo"
+        onPress={() => navigation.navigate('StoryFeed')}
+      />
 
     </View>
   );
