@@ -6,6 +6,7 @@ import WelcomeScreen from '../screens/WelcomeScreen';
 import FriendSuggestionScreen from '../screens/FriendSuggestionScreen';
 import ChatScreen from '../screens/ChatScreen';
 import StatusScreen from '../screens/StatusScreen';
+import StoryFeedScreen from '../screens/StoryFeedScreen';
 
 export type RootStackParamList = {
   Welcome: undefined;
@@ -24,6 +25,7 @@ export default function AppNavigator() {
         <Stack.Screen name="FriendSuggestion" component={FriendSuggestionScreen} />
         <Stack.Screen name="Chat" component={ChatScreen} />
         <Stack.Screen name="Status" component={StatusScreen} />
+	<Stack.Screen name="StoryFeed" component={StoryFeedScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
