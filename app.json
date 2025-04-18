@@ -17,6 +17,14 @@
     },
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "8f5a45fe-269d-4c8b-9d18-26d705a43ff7"
+      }
+    },
+    "android": {
+      "package": "com.congthanhhp92.lolichat"
+    }
   }
 }
