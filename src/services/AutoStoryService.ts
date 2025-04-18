@@ -1,24 +1,22 @@
-// src/services/AutoStoryService.ts
+import { analyzeEmotionFromStatus } from './EmotionAnalyzer';
+import { generateAIStoryByEmotion } from './AIStoryGenerator';
 
-export const getAutoStory = () => {
-  const stories = [
-    {
-      id: 'auto1',
-      friendName: 'Loli',
-      avatar: 'https://i.imgur.com/abc123.png',
-      image: 'https://i.imgur.com/xyz456.jpg',
-      caption: 'Hôm nay trời đẹp quá, cùng nhau đi dạo nhé!',
-    },
-    {
-      id: 'auto2',
-      friendName: 'Loli',
-      avatar: 'https://i.imgur.com/abc123.png',
-      image: 'https://i.imgur.com/def789.jpg',
-      caption: 'Đã đến giờ uống trà sữa rồi nè!',
-    },
-    // Thêm các story khác nếu cần
-  ];
+// Giả sử đây là status người dùng đã đăng gần đây
+const recentStatusSamples = [
+  'Hôm nay hơi mệt và buồn một xíu...',
+  'Chán học quá 😭',
+];
 
-  const today = new Date().getDate();
-  return stories[today % stories.length];
-};
+export function getAutoStory() {
+  const emotion = analyzeEmotionFromStatus(recentStatusSamples);
+  const aiSuggestion = generateAIStoryByEmotion(emotion);
+
+  return {
+    id: 'auto-ai',
+    friendName: 'Loli',
+    avatar: 'https://i.imgur.com/abc123.png',
+    image: aiSuggestion.image,
+    caption: aiSuggestion.caption,
+    timestamp: Date.now(),
+  };
+}
