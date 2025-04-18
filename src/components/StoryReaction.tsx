@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { saveReactionHistory } from '../services/StoryReactionStorage';
 
-export default function StoryReaction({ onReact }: { onReact: (emoji: string) => void }) {
+export default function StoryReaction({
+  onReact,
+  story,
+}: {
+  onReact: (emoji: string) => void;
+  story: any;
+}) {
   const [selected, setSelected] = useState<string | null>(null);
   const emojis = ['❤️', '😆', '😢', '👍'];
 
@@ -10,9 +17,10 @@ export default function StoryReaction({ onReact }: { onReact: (emoji: string) =>
       {emojis.map((emoji) => (
         <TouchableOpacity
           key={emoji}
-          onPress={() => {
+          onPress={async () => {
             setSelected(emoji);
             onReact(emoji);
+            await saveReactionHistory(story, emoji);
           }}
           style={[styles.emojiButton, selected === emoji && styles.selected]}
         >
@@ -26,7 +34,9 @@ export default function StoryReaction({ onReact }: { onReact: (emoji: string) =>
 const styles = StyleSheet.create({
   container: { flexDirection: 'row', marginTop: 6 },
   emojiButton: {
-    padding: 6, borderRadius: 6, marginRight: 8,
+    padding: 6,
+    borderRadius: 6,
+    marginRight: 8,
     backgroundColor: '#f0f0f0',
   },
   selected: {
