@@ -3,7 +3,7 @@
     package="com.congthanhhp92.lolichat">
 
     <application
-        android:name=".MainApplication"
+        android:name="com.congthanhhp92.lolichat.MainApplication"
         android:label="Loli"
         android:icon="@mipmap/ic_launcher"
         android:allowBackup="false"
