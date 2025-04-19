@@ -1,6 +1,11 @@
+
 import React from 'react';
-import AppNavigator from './src/navigation/AppNavigator';
+import { View, Text } from 'react-native';
 
 export default function App() {
-  return <AppNavigator />;
+  return (
+    <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+      <Text>Loli Native App 🚀</Text>
+    </View>
+  );
 }

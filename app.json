@@ -1,30 +1,23 @@
+
 {
   "expo": {
     "name": "Loli",
     "slug": "loli-chat",
     "version": "1.0.0",
-    "sdkVersion": "50.0.0",
+    "sdkVersion": "49.0.0",
+    "platforms": ["ios", "android", "web"],
     "orientation": "portrait",
-    "jsEngine": "hermes",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "userInterfaceStyle": "light",
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "extra": {
-      "eas": {
-        "projectId": "8f5a45fe-269d-4c8b-9d18-26d705a43ff7"
-      }
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
     },
     "android": {
       "package": "com.congthanhhp92.lolichat"
+    },
+    "ios": {
+      "bundleIdentifier": "com.congthanhhp92.lolichat"
     }
   }
 }
